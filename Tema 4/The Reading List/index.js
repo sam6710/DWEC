@@ -1,4 +1,5 @@
-import { Book as Libro, BookList as ListaLibros} from "./libro.js";
+// import { Book as Libro, BookList as ListaLibros} from "./libro.js";
+import { Book, Booklist } from "./libros.js";
 
 window.onload = function(){
     const titulo = document.getElementById("title");
