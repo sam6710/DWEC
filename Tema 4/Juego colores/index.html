@@ -6,21 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego Colores</title>
     <script type="text/javascript" src="./index.js"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        button{
+            border: none;
+            background-color: white;
+            color: rgb(45,142,153);
+            font-size: 20px;
+        }
+        #cabecera{
+            background-color: rgb(45,142,153);
+            color: white;
+            text-align: center;
+            padding:5px;
+        }
+        #colores{
+            padding: 12px;
+            align-content: center;
+            background-color: rgb(35,35,35);
+            display: grid;
+            grid-template-columns:200px 200px 200px;
+            padding-left: 330px;
+        }
+        .div_colores{
+            width: 140px;
+            height: 140px;
+            border-radius: 15%;
+            margin: 10px;
+        }
+        #reiniciar{
+            text-align: center;
+        }
+        img{
+            width: 120px;
+            height: 120px;
+            margin-top: 10px;
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
-    <div id="cabecera" style="background-color: rgb(45,142,153); text-align: center; color:white">
+    <div id="cabecera">
         <p>THE GREAT</p>
-        <h1>RGB()</h1>
+        <h1></h1>
         <p>GUESSING GAME</p>
     </div>
-    <p style="color:rgb(45,142,153)">NEW COLORS</p>
-    <div id="colores" style="text-align: center; background-color:rgb(35,35,35);">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <p id="reiniciar"><button id="new_colors">NEW COLORS</button></p>
+    <div id="colores">
+        <div class="div_colores" id="div1"><img src=""></div>
+        <div class="div_colores" id="div2"><img src=""></div>
+        <div class="div_colores" id="div3"><img src=""></div>
+        <div class="div_colores" id="div4"><img src=""></div>
+        <div class="div_colores" id="div5"><img src=""></div>
+        <div class="div_colores" id="div6"><img src=""></div>
     </div>
+    <h2 id="conclusion"></h2>
 </body>
 </html>
