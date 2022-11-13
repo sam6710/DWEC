@@ -8,6 +8,7 @@
     <script type="text/javascript" src="./index.js"></script>
     <style>
         body{
+            margin-top: 10%;
             background-color: orange;
             text-align: center;
         }
@@ -28,13 +29,19 @@
             font-size: 1.7em;
             font-family: monospace;
         }
+        #cronometro{
+            color: white;
+            font-size: 3em;
+            font-family: monospace;
+            margin-bottom: 2%;
+        }
     </style>
 </head>
 <body>
     <h1>STOPWATCH</h1>
     <h1>VANILLA JAVASCRIPT STOPWATCH</h1>
     <div id="cronometro">
-        <p id="horas"></p>:<p id="minutos"></p>:<p id="segundos"></p>
+        <span id="horas">00</span><span>:</span><span id="minutos">00</span><span>:</span><span id="segundos">00</span>
     </div>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
