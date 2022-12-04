@@ -1,3 +1,7 @@
+listaC = [];
+listaC.push();
+localStorage.listaCompra = JSON.stringify();
+
 window.onload = () => {
     input = document.querySelector("input");
     addBtn = document.getElementById("añadir");
@@ -20,7 +24,36 @@ window.onload = () => {
         empty.style.display = "none";
     }
     });
+
+    if(localStorage.listaCompra){
+        listaC = JSON.parse(localStorage.listaCompra);
+    }
 };
+
+function addDeleteBtn() {
+  deleteBtn = document.createElement("button");
+//   img = document.createElement("img");
+
+//   deleteBtn.appendChild(img);
+//   img.src="./imagenes/papelera.png";
+  deleteBtn.textContent = "X";
+  deleteBtn.id = "deleteBtn";
+
+  deleteBtn.addEventListener("click", (e) => {
+    li = e.target.parentElement;
+    ul.removeChild(li);
+
+    items = document.querySelectorAll("li");
+
+    if (items.length === 0) {
+      empty.style.display = "block";
+    }
+  });
+
+  return deleteBtn;
+}
+
+
 
 // function addModifyBtn() {
 //   modifyBtn = document.createElement("button");
@@ -35,25 +68,3 @@ window.onload = () => {
 
 //   return modifyBtn;
 // }
-
-function addDeleteBtn() {
-  deleteBtn = document.createElement("button");
-//   img = document.createElement("img");
-
-//   deleteBtn.appendChild(img);
-//   img.src="./imagenes/papelera.png";
-  deleteBtn.textContent = "X";
-
-  deleteBtn.addEventListener("click", (e) => {
-    item = e.target.parentElement;
-    ul.removeChild(item);
-
-    items = document.querySelectorAll("li");
-
-    if (items.length === 0) {
-      empty.style.display = "block";
-    }
-  });
-
-  return deleteBtn;
-}

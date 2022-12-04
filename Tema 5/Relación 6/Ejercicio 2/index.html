@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" href="./index.js">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart(){
+          var data = google.visualization.arrayToDataTable([
+            ["Partido", "%Votos", {role: "style"}],
+            ["PSOE", 28, "red"],
+            ["PP", 20.81, "blue"],
+            ["VOX", 15.08, "green"],
+            ["UP", 9.82, "purple"],
+            ["Cs", 6.80, "orange"],
+            ["ERC", 3.61, "#FF00FF"],
+            ["En Común Podem", 2.26, "#FED8B1"],
+            ["JxCAT", 2.19, "black"],
+            ["Otros", 2.26, "gray"]
+          ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+          var options = {
+            title: "Votación Diputados",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: {position: "none"},
+          };
+          var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+          chart.draw(view, options);
+
+          setTimeout(() => {
+            data.setValue(0, 1, 30);
+            data.setValue(1, 1, 20);
+            data.setValue(2, 1, 15);
+            data.setValue(3, 1, 10);
+            data.setValue(4, 1, 5);
+            data.setValue(5, 1, 3);
+            data.setValue(6, 1, 2);
+            data.setValue(7, 1, 2);
+            data.setValue(8, 1, 2);
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+            chart.draw(view, options);
+          }, 10000);
+      }
+    </script>
+</head>
+<body>
+    <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+</body>
+</html>
