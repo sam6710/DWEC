@@ -20,7 +20,7 @@ window.onload = () => {
 
 function lanzarPeticion(first){
     let search = document.getElementById("search").value;
-    let url = "http://www.omdbapi.com/?apikey=f14b0120&s=" + search;
+    let url = "https://www.omdbapi.com/?apikey=f14b0120&s=" + search;
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url);
     xhr.onload = () => {

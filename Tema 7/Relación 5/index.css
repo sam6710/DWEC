@@ -41,7 +41,7 @@ ul{
     margin-left: 5%;
     list-style: none;
     border: 1px solid gray;
-    border-bottom: none;
+    /* border-bottom: none; */
     width: 90%;
     border-radius: 0.3rem;
     background-color: rgb(50, 50, 50);
