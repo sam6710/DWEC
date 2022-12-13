@@ -7,15 +7,16 @@
     <title>Proyecto lista</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/4328465e5b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <div id="header">
         <h1>Proyeto Lista Tareas - Samuel Gómez Pérez</h1>
-        <input type="text" placeholder="¿Qué quieres recordar?">
+        <input type="text" id="input" placeholder="¿Qué quieres recordar?">
     </div>
     <hr>
-    <p id="pendientes"></p>
+    <p id="pendientes"><span id="cantidad_pendientes"></span>|<span id="borrarTareas">Borrar tareas completadas</span></p>
     <hr>
     <div id="lista">
         <ul>
