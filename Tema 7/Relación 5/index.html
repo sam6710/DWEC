@@ -6,46 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto lista</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <!-- <script src="./index.js"></script> -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js"></script>
     <script src="https://kit.fontawesome.com/4328465e5b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <div id="vue">
-        <div id="header">
-            <h1>Proyeto Lista Tareas - Samuel Gómez Pérez</h1>
-            <input type="text" id="input" v-model="texto" @keyup.enter="añadirTarea" placeholder="¿Qué quieres recordar?">
-        </div>
-        <hr>
-        <p id="pendientes"><span id="cantidad_pendientes">{{tareasPendientes}} de {{totalTareas}}</span>|<span @click="borrarCompletadas()" id="borrarTareas">Borrar tareas completadas</span></p>
-        <input id="filtro" type="text" placeholder="Búscar tarea" v-model="filtro" @keyup.enter="filtrarPorInput">
-        <hr>
-        <div id="lista">
-            <ul>
-                <li id="recordatorio" v-for="tarea in tareasFiltradas" :key="tarea.date">
-                    <button id='hecho' :class="{hecho:tarea.completado}"></button>
-                    <p id="contenido" :class="{completado:tarea.completado}">{{tarea.contenido}}</p>
-                    <div id='prioridades'>
-                        Prioridad:
-                        <button :class="{low:tarea.prioridad==1}" class='prioridad' id='low' @click="cambiarPrioridad()">↓Low</button>
-                        <button :class="{normal:tarea.prioridad==2}" class='prioridad' id='normal' @click="cambiarPrioridad()">Normal</button>
-                        <button :class="{high:tarea.prioridad==3}" class='prioridad' id='high' @click="cambiarPrioridad()">High↑</button>
-                    </div>
-                    <div id='tiempo'>
-                        <p>⌛Añadido hace {{calcularTiempo(tarea)}} minutos</p>
-                    </div>
-                    <i class='fa-solid fa-square-minus' @click="borrarNota()"></i>
-                </li>
-            </ul>
-        </div>
-        <footer>
-            <p>Desarrollado por Samuel Gómez Pérez</p>
-            <p>Código disponible en <a href="https://github.com/sam6710" id="GitHub" target="_blank">GitHub</a></p>
-        </footer>
+    <div id="header">
+        <h1>Proyeto Lista Tareas - Samuel Gómez Pérez</h1>
+        <input type="text" id="input" placeholder="¿Qué quieres recordar?">
     </div>
+    <hr>
+    <p id="pendientes"><span id="cantidad_pendientes"></span>|<span id="borrarTareas">Borrar tareas completadas</span></p>
+    <hr>
+    <div id="lista">
+        <ul>
+        </ul>
+    </div>
+    <footer>
+        <p>Desarrollado por Samuel Gómez Pérez</p>
+        <p>Código disponible en <a href="https://github.com/sam6710" id="GitHub" target="_blank">GitHub</a></p>
+    </footer>
 </body>
-
-<script src="./vue.js"></script>
-
 </html>

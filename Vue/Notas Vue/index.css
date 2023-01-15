@@ -114,3 +114,40 @@ footer{
     right: 6%;
     float: right;
 }
+
+
+
+/* VUE */
+.completado{
+    text-decoration: line-through;
+    color: aqua;
+}
+.hecho{
+    background-color: aqua;
+}
+.low{
+    background-color: green;
+    color: white;
+}
+.normal{
+    background-color: blue;
+    color: white;
+}
+.high{
+    background-color: red;
+    color: white;
+}
+#filtro{
+    width: 10%;
+    border-radius: 0.3rem;
+    border: none;
+    height: 2rem;
+    margin-top: 0.8rem;
+    margin-left: 5%;
+}
+select{
+    margin-left: 3%;
+    width: 5.5%;
+    height: 24px;
+    border-radius: 0.3rem;
+}
