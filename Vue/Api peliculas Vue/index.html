@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas Vue</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body id="vue">
+    <div id="cabecera">
+        <h1>Buscador películas</h1>
+        <div id="buscador">
+            <input type="text" id="search" placeholder="Buscar..." v-model="busqueda" @keyup.enter="lanzarPeticion()">
+            <button type="button">Buscar</button>
+            <button type="button">Borrar</button>
+        </div>
+    </div>
+    <div id="Informacion">
+        <h2 :class="{oculto:informacion}">Esperando busqueda.....</h2>
+        <div class="movie" v-for="pelicula in peliculas">
+            <h3>{{pelicula.Title}}</h3>
+            <img :src="pelicula.Poster" alt="Poster película">
+            <p>{{pelicula.Year}}</p>
+        </div>
+    </div>
+</body>
+<script src="./vue.js"></script>
+</html>
