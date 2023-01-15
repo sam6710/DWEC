@@ -14,8 +14,8 @@
         <h1>Buscador películas</h1>
         <div id="buscador">
             <input type="text" id="search" placeholder="Buscar..." v-model="busqueda" @keyup.enter="lanzarPeticion()">
-            <button type="button">Buscar</button>
-            <button type="button">Borrar</button>
+            <button type="button" @click="lanzarPeticion()">Buscar</button>
+            <button type="button" @click="borrar()">Borrar</button>
         </div>
     </div>
     <div id="Informacion">
